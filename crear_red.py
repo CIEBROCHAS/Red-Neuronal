@@ -9,7 +9,10 @@ def crear_matriz_pesos(n, m) -> np.ndarray:
 
 # Crear un diccionario de matrices de pesos para una red neuronal donde long_inp es la cantidad de
 # neuronas de la capa de input, long_out de la capa de output, long_media de las capas intermedias
-# u ocultas y cantidad_medias la cantidad de capas medias que habrán
+# u ocultas y cantidad_medias la cantidad de capas medias que habrán.
+#
+# La entrada (0, 1) son los pesos entre la primera capa y la segunda, la
+# (cantidad_medias, cantidad_medias + 1) los pesos entre la penúltima y la última
 def crear_dict_matrices(long_inp, long_out, long_media, cantidad_medias) -> dict:
     if not all(isinstance(x, int) for x in [long_inp, long_out, long_media, cantidad_medias]):
         raise TypeError("Todos los parámetros deben ser enteros")
